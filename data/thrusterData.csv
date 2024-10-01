@@ -1,0 +1,20 @@
+Name,Grid Type,Mass [kg],Thrust [N],Fuel Consumption [L/s],Integrity,Volume,Thrust Surface,Thrust/Volume,Fuel Type
+Small Hydrogen Thruster,Small,334,9.84E+04,80.35,1390,1,1,0,Hydrogen
+Large Hydrogen Thruster,Small,1222,4.80E+05,385.7,5160,9,3,0,Hydrogen
+Small Hydrogen Thruster,Large,1420,1.08E+06,803.55,5980,1,1,0,Hydrogen
+Large Hydrogen Thruster,Large,6940,7.20E+06,4821.29,30300,9,3,0,Hydrogen
+Stribog-50,Small,465,1.97E+05,152,1930,1,1,0,Hydrogen
+Stribog-100,Small,849,3.94E+05,290,3540,2,2,0,Hydrogen
+Stribog-200,Small,1670,7.87E+05,733,6950,12,6,0,Hydrogen
+Stribog-300,Small,3055,1.44E+06,1157,12900,40,10,0,Hydrogen
+Stribog-350,Large,1790,2.16E+06,1527,7550,1,1,0,Hydrogen
+Stribog-400,Large,3560,4.32E+06,2901,15000,2,2,0,Hydrogen
+Stribog-500,Large,7100,8.64E+06,5512,29900,12,6,0,Hydrogen
+Stribog-550,Large,8696,1.44E+07,9162,37970,54,9,0,Hydrogen
+Stribog-600,Large,17350,2.88E+07,17409,75750,90,15,0,Hydrogen
+Small Fusion Thruster,Small,1963.6,2.10E+05,13.39,2327,2,1,0,Deuterium
+Large Fusion Thruster,Small,9557,1.03E+06,13.39,10614,54,9,0,Deuterium
+Huge Fusion Thruster,Small,10219,9.04E+06,26.78,14100,250,25,0,Deuterium
+Small Fusion Thruster,Large,10219,9.04E+06,26.78,14100,2,1,0,Deuterium
+Large Fusion Thruster,Large,48580,3.38E+07,107.11,59440,54,9,0,Deuterium
+Huge Fusion Thruster,Large,325400,2.26E+08,214.22,443660,275,25,0,Deuterium
