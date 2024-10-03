@@ -1,9 +1,16 @@
-Refined Material,Currency Value,Steel Plate,Metal Grid,Large Steel Tubes,Construction Comp,Small Steel Tubes,Gravity Comp,Computer,Superconductor,Detector Comp,Power Cell,Motor,Thruster Comp,Girder,Display
-Fe,156,7,4,10,2.67,1.67,200,0.17,3.33,1.67,3.33,6.67,10,2,0.33
-Si,256,0,0,0,0,0,0,0.07,0,0,0.33,0,0,0,1.67
-Co,1578,0,1,0,0,0,73.33,0,0,0,0,0,3.33,0,0
-Gravel,52,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-Ni,315,0,1.67,0,0,0,0,0,0,5,0.67,1.67,0,0,0
-Ag,2658,0,0,0,0,0,1.67,0,0.67,0,0,0,0,0,0
-Au,21516,0,0,0,0,0,3.33,0,0,0,0,0,0.33,0,0
-Pt,92111,0,0,0,0,0,0,0,0,0,0,0,0.13,0,0
+Name,Fe,Si,Co,Gravel,Ni,Ag,Au,Pt
+Steel Plate,7,0,0,0,0,0,0,0
+Metal Grid,4,0,1,0,1.67,0,0,0
+Large Steel Tubes,10,0,0,0,0,0,0,0
+Construction Comp,2.67,0,0,0,0,0,0,0
+Small Steel Tubes,1.67,0,0,0,0,0,0,0
+Gravity Comp,200,0,73.33,0,0,1.67,3.33,0
+Computer,0.17,0.07,0,0,0,0,0,0
+Superconductor,3.33,0,0,0,0,0.67,0,0
+Detector Comp,1.67,0,0,0,5,0,0,0
+Power Cell,3.33,0.33,0,0,0.67,0,0,0
+Motor,6.67,0,0,0,1.67,0,0,0
+Thruster Comp,10,0,3.33,0,0,0,0.33,0.13
+Girder,2,0,0,0,0,0,0,0
+Display,0.33,1.67,0,0,0,0,0,0
+Fusion Coil,10,0,8,0,0,0,5.33,2.67
