@@ -1,0 +1,9 @@
+Name, Grid Type, Mass [kg],Volume, Intake, H2 Out, O2 Out, Deuterium Out, Power
+H2O2 Generator, Large, 2587, 2, H2O, 500, 250, 0, 500
+Deuterium Processor, Large, 4259, 2, H2O, 400, 200, 150, 1000
+Deuterium Separator, Large, 4622, 2, Stone/Gravel, 150, 0, 75, 1500
+Deuterium Vaporizer, Large, 4092, 2, D, 0, 0, 600, 750
+H2O2 Generator, Small, 298.6, 18, H2O, 100, 50, 0, 100
+Deuterium Processor, Small, 2508, 45, H2O, 200, 100, 60, 1000
+Deuterium Separator, Small, 2902, 45, Stone/Gravel, 72, 0, 36, 1200
+Deuterium Vaporizer, Small, 2648, 45, D, 0, 0, 270, 500

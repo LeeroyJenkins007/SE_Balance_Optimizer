@@ -6,13 +6,29 @@ import pandas as pd
 import matplotlib.pyplot as plt
 import numpy as np
 
+RELOAD = True
 
 # Press the green button in the gutter to run the script.
 if __name__ == '__main__':
-    # generate thruster components
-    thrusterData = pd.read_csv("data/thrusterData.csv")
-    componentData = pd.read_csv("data/componentBOM.csv")
-    bpData = pd.read_csv("data/bpBOM.csv")
+    # run when changes to any of the .csv's
+    if RELOAD:
+        # generate thruster components
+        thrusterData = pd.read_csv("data/thrusterData.csv")
+        thrusterData.to_pickle("data/thrusterData.pkl")
+
+        componentData = pd.read_csv("data/componentBOM.csv")
+        componentData.to_pickle("data/componentData.pkl")
+
+        bpData = pd.read_csv("data/bpBOM.csv")
+        bpData.to_pickle("data/bpData.pkl")
+
+        fuel_pumpData = pd.read_csv("data/fuelpumpData.csv")
+        fuel_pumpData.to_pickle("data/fuel_pumpData.pkl")
+    else:
+        thrusterData = pd.read_pickle("data/thrusterData.pkl")
+        componentData = pd.read_pickle("data/componentData.pkl")
+        bpData = pd.read_pickle("data/bpData.pkl")
+        fuel_pumpData = pd.read_pickle("data/fuel_pumpData.pkl")
 
     pd.set_option('display.max_columns', None)
 
@@ -49,8 +65,8 @@ if __name__ == '__main__':
         thruster.set_cost(np.dot(bpVect, partVect))
         # print(thruster)
         # print(bp_bom)
-    thrust_vs_mass(sgThrusters, 'Small Grid')
-    thrust_vs_cost(sgThrusters, 'Small Grid')
+    # thrust_vs_mass(sgThrusters, 'Small Grid')
+    # thrust_vs_cost(sgThrusters, 'Small Grid')
     thrust2cost(sgThrusters, 'Small Grid')
     thrust2mass(sgThrusters, 'Small Grid')
 
@@ -73,8 +89,8 @@ if __name__ == '__main__':
         thruster.set_cost(np.dot(bpVect, partVect))
         # print(thruster)
 
-    thrust_vs_mass(lgThrusters, 'Large Grid')
-    thrust_vs_cost(lgThrusters, 'Large Grid')
+    # thrust_vs_mass(lgThrusters, 'Large Grid')
+    # thrust_vs_cost(lgThrusters, 'Large Grid')
     thrust2cost(lgThrusters, 'Large Grid')
     thrust2mass(lgThrusters, 'Large Grid')
 
