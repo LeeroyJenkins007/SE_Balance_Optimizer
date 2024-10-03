@@ -2,6 +2,13 @@ from components import GridSize
 import numpy as np
 from components import MaterialCost
 
+costVect = [MaterialCost.Fe.value, MaterialCost.Si.value, MaterialCost.Co.value, MaterialCost.Gr.value,
+                 MaterialCost.Ni.value, MaterialCost.Ag.value, MaterialCost.Au.value, MaterialCost.Pt.value]
+
+def calculate_cost(materialList):
+    cost = np.dot(materialList, costVect)
+    return cost
+
 
 class PowerPlant:
     def __init__(self, name):

@@ -1,37 +1,41 @@
 from blocks import Thruster
 from blocks import Part
 from plottingfunctions import *
+from components import MaterialCost
 
 import pandas as pd
 import matplotlib.pyplot as plt
 import numpy as np
 
-RELOAD = True
+RELOAD = False
+
 
 # Press the green button in the gutter to run the script.
 if __name__ == '__main__':
     # run when changes to any of the .csv's
     if RELOAD:
         # generate thruster components
-        thrusterData = pd.read_csv("data/thrusterData.csv")
+        thrusterData = pd.read_csv("data/source/thrusterData.csv")
         thrusterData.to_pickle("data/thrusterData.pkl")
 
-        componentData = pd.read_csv("data/componentBOM.csv")
+        componentData = pd.read_csv("data/source/componentBOM.csv")
         componentData.to_pickle("data/componentData.pkl")
 
-        bpData = pd.read_csv("data/bpBOM.csv")
+        bpData = pd.read_csv("data/source/bpBOM.csv")
         bpData.to_pickle("data/bpData.pkl")
 
-        fuel_pumpData = pd.read_csv("data/fuelpumpData.csv")
+        fuel_pumpData = pd.read_csv("data/source/fuelpumpData.csv")
         fuel_pumpData.to_pickle("data/fuel_pumpData.pkl")
     else:
         thrusterData = pd.read_pickle("data/thrusterData.pkl")
         componentData = pd.read_pickle("data/componentData.pkl")
+        print(componentData)
         bpData = pd.read_pickle("data/bpData.pkl")
         fuel_pumpData = pd.read_pickle("data/fuel_pumpData.pkl")
 
     pd.set_option('display.max_columns', None)
 
+    ## Time to run data specific calculations based on type of data
     # Components
     parts = []
     partVect = []
@@ -44,6 +48,18 @@ if __name__ == '__main__':
             parts.append(part)
             partVect.append(part.cost)
             # print(part)
+    # costVect = cost_func()
+
+    # thrusters
+    t2m = [] # thrust to mass
+    t2c = [] # thrust to cost
+    t2a = [] # thrust to area
+    for index, dat in thrusterData.iterrows():
+        t2m.append(dat['Thrust [N]'] / dat['Mass [kg]'])
+        # add cost and thrust 2 cost ratio
+
+    thrusterData['Thrust/Mass'] = t2m
+    # print(thrusterData)
 
     # small grid thrusters
     sgThrusterData = thrusterData[thrusterData['Grid Type'] == "Small"]
@@ -67,8 +83,9 @@ if __name__ == '__main__':
         # print(bp_bom)
     # thrust_vs_mass(sgThrusters, 'Small Grid')
     # thrust_vs_cost(sgThrusters, 'Small Grid')
-    thrust2cost(sgThrusters, 'Small Grid')
-    thrust2mass(sgThrusters, 'Small Grid')
+    # thrust2cost(sgThrusters, 'Small Grid')
+    # thrust2costV2(thrusterData[thrusterData['Grid Type'] == 'Small Grid'], 'Small Grid Test')
+    thrust2mass(thrusterData[thrusterData['Grid Type'] == 'Small'], 'Small Grid Test')
 
     # large grid thrusters
     lgThrusterData = thrusterData[thrusterData['Grid Type'] == "Large"]
@@ -91,7 +108,7 @@ if __name__ == '__main__':
 
     # thrust_vs_mass(lgThrusters, 'Large Grid')
     # thrust_vs_cost(lgThrusters, 'Large Grid')
-    thrust2cost(lgThrusters, 'Large Grid')
-    thrust2mass(lgThrusters, 'Large Grid')
+    # thrust2cost(lgThrusters, 'Large Grid')
+    thrust2mass(thrusterData[thrusterData['Grid Type'] == 'Large'], 'Large Grid')
 
     plt.show()
