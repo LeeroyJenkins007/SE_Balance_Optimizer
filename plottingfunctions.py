@@ -10,8 +10,8 @@ def addhorzlabels(x,y):
 
 def thrust_vs_mass(dfdata, title):
     fig, ax = plt.subplots()
-    for dat in dfdata:
-        ax.scatter(dat.thrust, dat.mass, label=dat.name)
+    for index, dat in dfdata.iterrows():
+        ax.scatter(dat['Thrust [N]'], dat['Mass [kg]'], label=dat['Name'])
 
     ax.legend(loc="lower right")
     plt.title(title + ' Thrust to Mass')
@@ -37,8 +37,8 @@ def thrust2mass(thrusterData, title):
 
 def thrust_vs_cost(dfdata, title):
     fig, ax = plt.subplots()
-    for dat in dfdata:
-        ax.scatter(dat.thrust, dat.cost, label=dat.name)
+    for index, dat in dfdata.iterrows():
+        ax.scatter(dat['Thrust [N]'], dat['Cost'], label=dat['Name'])
 
     ax.legend(loc="lower right")
     plt.title(title + ' Thrust to Cost')
@@ -46,14 +46,15 @@ def thrust_vs_cost(dfdata, title):
     plt.ylabel('Cost [-]')
 
 
-def thrust2cost(listdata, title):
+def thrust2cost(thrusterData, title):
     fig, ax = plt.subplots()
-    y_pos = np.arange(len(listdata))
+    y_pos = np.arange(len(thrusterData))
     names = []
     ratios = []
-    for dat in listdata:
-        ratio = dat.thrust / dat.cost
-        names.append(dat.name)
+    for index, dat in thrusterData.iterrows():
+        # print(dat)
+        ratio = dat['Thrust [N]'] / dat['Cost']
+        names.append(dat['Name'])
         ratios.append(ratio)
 
     ax.barh(y_pos, ratios)
@@ -61,13 +62,13 @@ def thrust2cost(listdata, title):
     ax.set_title(f'Thrust to Cost Ratios: {title}')
 
 
-def thrust2costV2(thrusterData, title):
+def thrust2fuel(thrusterData, fuelType, title):
     fig, ax = plt.subplots()
     y_pos = np.arange(len(thrusterData))
     names = []
     ratios = []
-    for dat in thrusterData:
-        print(dat)
+    for index, dat in thrusterData.iterrows():
+        # print(dat)
         ratio = dat['Thrust [N]'] / dat['Cost']
         names.append(dat['Name'])
         ratios.append(ratio)
