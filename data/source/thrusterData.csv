@@ -1,45 +1,45 @@
-Name,Grid Type,Mass [kg],Thrust [N],Fuel Consumption,Integrity,Volume,Thrust Surface,Fuel Type,PCU
-Small Hydrogen,Small,334,9.84E+04,80.35,1390,1,1,Hydrogen,15
-Large Hydrogen,Small,1222,4.80E+05,385.7,5160,9,3,Hydrogen,15
-Small Hydrogen,Large,1420,1.08E+06,803.55,5980,1,1,Hydrogen,15
-Large Hydrogen,Large,6940,7.20E+06,4821.29,30300,9,3,Hydrogen,15
-Stribog-50,Small,465,1.97E+05,152,1930,1,1,Hydrogen,15
-Stribog-100,Small,849,3.94E+05,290,3540,2,2,Hydrogen,15
-Stribog-200,Small,1670,7.87E+05,733,6950,12,6,Hydrogen,30
-Stribog-300,Small,3055,1.44E+06,1157,12900,40,10,Hydrogen,30
-Stribog-350,Large,1790,2.16E+06,1527,7550,1,1,Hydrogen,15
-Stribog-400,Large,3560,4.32E+06,2901,15000,2,2,Hydrogen,15
-Stribog-500,Large,7100,8.64E+06,5512,29900,12,6,Hydrogen,30
-Stribog-550,Large,8696,1.44E+07,9162,37970,54,9,Hydrogen,25
-Stribog-600,Large,17350,2.88E+07,17409,75750,90,15,Hydrogen,50
-Small Fusion,Small,1963.6,2.10E+05,13.39,2327,2,1,Deuterium,15
-Large Fusion,Small,9557,1.03E+06,13.39,10614,54,9,Deuterium,15
-Huge Fusion,Small,10219,9.04E+06,26.78,14100,250,25,Deuterium,15
-Small Fusion,Large,10219,9.04E+06,26.78,14100,2,1,Deuterium,15
-Large Fusion,Large,48580,3.38E+07,107.11,59440,54,9,Deuterium,15
-Huge Fusion,Large,325400,2.26E+08,214.22,443660,275,25,Deuterium,15
-RT6-B Morrigan,Large,39315,2.60E+07,700,125885,36,9,Hydrogen,150
-N22 Pandora-II,Large,23160,2.00E+07,700,61960,18,9,Hydrogen,150
-S-100 Munroe,Large,28440,2.40E+07,900,72860,27,9,Hydrogen,125
-E-405 Avalon,Large,8940,1.00E+07,610,36310,32,4,Hydrogen,125
-LV-300 Raider,Large,15740,1.90E+07,1200,59130,27,9,Hydrogen,125
-RT8 Tachi,Large,64060,6.20E+07,1500,212480,150,25,Hydrogen,200
-AM-R5 Silversmith,Large,69790,7.30E+07,1750,207330,100,25,Hydrogen,200
-RTF-B Scirocco,Large,88360,1.25E+08,3500,301450,343,49,Hydrogen,200
-LV613 Camina,Large,50270,6.00E+07,1610,167880,125,25,Hydrogen,200
-RT-10 Kaminari,Large,215350,3.75E+08,7000,665050,1210,121,Hydrogen,300
-RCS Rex,Large,1290,1.25E+06,250,5480,1,1,Hydrogen,8
-M55-G Originem,Small,4230,1.75E+06,165,11260,100,25,Hydrogen,75
-Destrier-4 Sunflare,Small,7430,4.25E+06,200,22170,735,49,Hydrogen,75
-Atmospheric,Large,4000,6.48E+05,2.40E+06,10180,3,1,Atmospheric,15
-Large Atmospheric,Large,32970,6.48E+06,1.68E+07,73000,45,9,Atmospheric,15
-Sidhe-350,Large,2546,4.00E+05,1.20E+06,7140,1,1,Atmospheric,30
-Sidhe-400,Large,24380,7.80E+06,1.00E+07,54800,9,9,Atmospheric,30
-Atmospheric,Small,699,9.60E+04,6.00E+05,1770,3,1,Atmospheric,15
-Large Atmospheric,Small,2948,5.76E+05,2.40E+06,6980,45,9,Atmospheric,15
-Sidhe-50,Small,566,6.40E+04,3.00E+05,1570,1,1,Atmospheric,30
-Sidhe-100,Small,2120,4.30E+05,1.50E+06,5260,9,9,Atmospheric,30
-Ion,Small,121,1.44E+04,2.00E+05,350,2,1,Ion,15
-Large Ion,Small,721,1.73E+05,2.40E+06,1220,24,6,Ion,15
-Ion,Large,4380,3.46E+05,3.36E+06,7180,2,1,Ion,15
-Large Ion,Large,43200,4.32E+06,3.36E+07,49200,24,6,Ion,15
+Name,Grid Type,Mass [kg],Thrust [N],Fuel Consumption,Integrity,Volume,Length,Width,Fuel Type,PCU
+Small Hydrogen,Small,334,9.84E+04,80.35,1390,1,1,1,Hydrogen,15
+Large Hydrogen,Small,1222,4.80E+05,385.7,5160,27,3,3,Hydrogen,15
+Small Hydrogen,Large,1420,1.08E+06,803.55,5980,1,1,1,Hydrogen,15
+Large Hydrogen,Large,6940,7.20E+06,4821.29,30300,27,3,3,Hydrogen,15
+Stribog-50,Small,465,1.97E+05,152,1930,1,1,1,Hydrogen,15
+Stribog-100,Small,849,3.94E+05,290,3540,2,2,1,Hydrogen,15
+Stribog-200,Small,1670,7.87E+05,733,6950,12,3,2,Hydrogen,30
+Stribog-300,Small,3055,1.44E+06,1157,12900,40,5,2,Hydrogen,30
+Stribog-350,Large,1790,2.16E+06,1527,7550,1,1,1,Hydrogen,15
+Stribog-400,Large,3560,4.32E+06,2901,15000,2,2,1,Hydrogen,15
+Stribog-500,Large,7100,8.64E+06,5512,29900,12,3,2,Hydrogen,30
+Stribog-550,Large,8696,1.44E+07,9162,37970,54,3,3,Hydrogen,25
+Stribog-600,Large,17350,2.88E+07,17409,75750,90,5,3,Hydrogen,50
+Small Fusion,Small,1963.6,2.10E+05,13.39,2327,2,1,1,Deuterium,15
+Large Fusion,Small,9557,1.03E+06,13.39,10614,54,3,3,Deuterium,15
+Huge Fusion,Small,10219,9.04E+06,26.78,14100,250,5,5,Deuterium,15
+Small Fusion,Large,10219,9.04E+06,26.78,14100,2,1,1,Deuterium,15
+Large Fusion,Large,48580,3.38E+07,107.11,59440,54,3,3,Deuterium,15
+Huge Fusion,Large,325400,2.26E+08,214.22,443660,275,5,5,Deuterium,15
+RT6-B Morrigan,Large,39315,2.60E+07,700,125885,36,3,3,Hydrogen,150
+N22 Pandora-II,Large,23160,2.00E+07,700,61960,18,3,3,Hydrogen,150
+S-100 Munroe,Large,28440,2.40E+07,900,72860,27,3,3,Hydrogen,125
+E-405 Avalon,Large,8940,1.00E+07,610,36310,16,2,2,Hydrogen,125
+LV-300 Raider,Large,15740,1.90E+07,1200,59130,27,3,3,Hydrogen,125
+RT8 Tachi,Large,64060,6.20E+07,1500,212480,150,5,5,Hydrogen,200
+AM-R5 Silversmith,Large,69790,7.30E+07,1750,207330,100,5,5,Hydrogen,200
+RTF-B Scirocco,Large,88360,1.25E+08,3500,301450,343,7,7,Hydrogen,200
+LV613 Camina,Large,50270,6.00E+07,1610,167880,125,5,5,Hydrogen,200
+RT-10 Kaminari,Large,215350,3.75E+08,7000,665050,1089,11,11,Hydrogen,300
+RCS Rex,Large,1290,1.25E+06,250,5480,1,1,1,Hydrogen,8
+M55-G Originem,Small,4230,1.75E+06,165,11260,100,5,5,Hydrogen,75
+Destrier-4 Sunflare,Small,7430,4.25E+06,200,22170,735,7,7,Hydrogen,75
+Atmospheric,Large,4000,6.48E+05,2.40E+06,10180,3,1,1,Atmospheric,15
+Large Atmospheric,Large,32970,6.48E+06,1.68E+07,73000,45,3,3,Atmospheric,15
+Sidhe-350,Large,2546,4.00E+05,1.20E+06,7140,1,1,1,Atmospheric,30
+Sidhe-400,Large,24380,7.80E+06,1.00E+07,54800,9,3,3,Atmospheric,30
+Atmospheric,Small,699,9.60E+04,6.00E+05,1770,3,1,1,Atmospheric,15
+Large Atmospheric,Small,2948,5.76E+05,2.40E+06,6980,45,3,3,Atmospheric,15
+Sidhe-50,Small,566,6.40E+04,3.00E+05,1570,1,1,1,Atmospheric,30
+Sidhe-100,Small,2120,4.30E+05,1.50E+06,5260,9,3,3,Atmospheric,30
+Ion,Small,121,1.44E+04,2.00E+05,350,2,1,1,Ion,15
+Large Ion,Small,721,1.73E+05,2.40E+06,1220,24,3,2,Ion,15
+Ion,Large,4380,3.46E+05,3.36E+06,7180,2,1,1,Ion,15
+Large Ion,Large,43200,4.32E+06,3.36E+07,49200,24,3,2,Ion,15

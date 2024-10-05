@@ -11,11 +11,12 @@ RELOAD = True
 
 
 # Press the green button in the gutter to run the script.
+
 if __name__ == '__main__':
     # run when changes to any of the .csv's
     if RELOAD:
         # generate thruster components
-        thrusterData = pd.read_csv("data/source/thrusterData.csv")
+        thrusterData = pd.read_csv("data/source/thrusterData.csv", index_col='Name')
         thrusterData.to_pickle("data/thrusterData.pkl")
 
         componentData = pd.read_csv("data/source/componentBOM.csv")
@@ -35,6 +36,7 @@ if __name__ == '__main__':
 
     pd.set_option('display.max_columns', None)
 
+
     ## Time to run data specific calculations based on type of data
     # Components
     # calculate the relative cost for the
@@ -46,6 +48,7 @@ if __name__ == '__main__':
     componentData['Cost'] = componentCost
 
     # thrusters
+    # print(thrusterData)
     t2m = [] # thrust to mass
     tCost = []
     t2c = [] # thrust to cost
@@ -54,7 +57,10 @@ if __name__ == '__main__':
         # add thrust 2 mass ratio
         t2m.append(dat['Thrust [N]'] / dat['Mass [kg]'])
         # add cost and thrust 2 cost ratio
-        bp = bpData[(bpData['Name'] == dat['Name']) & (bpData['Grid Type'] == dat['Grid Type'])]
+        # print(dat.index)
+        # print(dat['Name'])
+        bp = bpData[(bpData['Name'] == index) & (bpData['Grid Type'] == dat['Grid Type'])]
+        # bp = bpData[(bpData['Name', 'Grid Type'] == [dat['Name', 'Grid Type']) & (bpData['Grid Type'] == dat['Grid Type'])]
         bp_bom = bp.drop(['Name', 'Grid Type'], axis=1)
         bpVect = bp_bom.values.flatten().tolist()
         cost = np.dot(bpVect, componentCost)
@@ -70,9 +76,13 @@ if __name__ == '__main__':
     # thrust2cost(thrusterData[thrusterData['Grid Type'] == 'Small'], 'Small Grid Test')
     # thrust2mass(thrusterData[thrusterData['Grid Type'] == 'Small'], 'Small Grid Test')
 
-    thrust_vs_cost(thrusterData[thrusterData['Grid Type'] == 'Large'], 'Large Grid')
-    thrust_vs_mass(thrusterData[thrusterData['Grid Type'] == 'Large'], 'Large Grid')
-    thrust2cost(thrusterData[thrusterData['Grid Type'] == 'Large'], 'Large Grid')
-    thrust2mass(thrusterData[thrusterData['Grid Type'] == 'Large'], 'Large Grid')
+    thrust2cost(thrusterData[(thrusterData['Grid Type'] == 'Large') & (thrusterData['Fuel Type'] == 'Hydrogen')], 'Large Grid Hydrogen')
+    thrust2base(thrusterData[(thrusterData['Grid Type'] == 'Large') & (thrusterData['Fuel Type'] == 'Hydrogen')], "Small Hydrogen")
+    pltcost(thrusterData[(thrusterData['Grid Type'] == 'Large') & (thrusterData['Fuel Type'] == 'Hydrogen')], 'Large Grid Hydrogen')
+    thrust2fuel(thrusterData[thrusterData['Grid Type'] == 'Large'], 'Hydrogen', 'Large Grid Hydrogen Fuel Consumption')
+    # topContender(thrusterData[(thrusterData['Grid Type'] == 'Large') & (thrusterData['Fuel Type'] == 'Hydrogen'), 'Large Grid Hydrogen')
+    # thrust_vs_cost(thrusterData[thrusterData['Grid Type'] == 'Large'], 'Large Grid')
+    # thrust_vs_mass(thrusterData[thrusterData['Grid Type'] == 'Large'], 'Large Grid')
+    # thrust2mass(thrusterData[thrusterData['Grid Type'] == 'Large'], 'Large Grid')
 
     plt.show()
