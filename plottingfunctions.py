@@ -71,7 +71,7 @@ def thrust2fuel(thrusterData, fuelType, title):
     consume = []
     for index, dat in thrusterData[thrusterData['Fuel Type'] == fuelType].iterrows():
         # print(f'Is DataFrame: {isinstance(dat, pd.Series)}')
-        #print(dat['Fuel Consumption'])
+        # print(dat['Fuel Consumption'])
         names.append(index)
         consume.append(dat['Fuel Consumption'])
 
@@ -87,7 +87,7 @@ def thrust2base(thrusterData, baseName):
     # print(thrusterData)
     # print(f"{thrusterData.index = }")
     fig, ax = plt.subplots()
-    #print(baseData)
+    # print(baseData)
     baseData = thrusterData.loc[baseName]
     # print(f'Is DataFrame: {isinstance(baseData, pd.DataFrame)}')
     # print(baseData)
@@ -101,7 +101,7 @@ def thrust2base(thrusterData, baseName):
     names = []
     ratios = []
     for index, dat in thrusterData.iterrows():
-        #print(index)
+        # print(index)
         # tSurface = dat['Length'] * dat['Width']
         numBase = np.floor(dat['Length'] / baseL) * np.floor(dat['Width'] / baseW)
         theoreticalT = numBase * baseT
@@ -125,7 +125,7 @@ def pltcost(thrusterData, title):
     costs = []
     for index, dat in thrusterData.iterrows():
         # print(dat)
-        #ratio = dat['Thrust [N]'] / dat['Cost']
+        # ratio = dat['Thrust [N]'] / dat['Cost']
         # print(ratio)
         names.append(index)
         costs.append(dat['Cost'])
@@ -136,17 +136,31 @@ def pltcost(thrusterData, title):
     ax.set_title(f'Relative Cost: {title}')
 
 
+def ispbar(thrusterData, title):
+    fig, ax = plt.subplots()
+    y_pos = np.arange(len(thrusterData))
+    names = []
+    isp = []
+    for index, dat in thrusterData.iterrows():
+        names.append(index)
+        isp.append(dat['Cost'])
+
+    ax.barh(y_pos, isp)
+    ax.set_yticks(y_pos, labels=names)
+    addhorzlabels(isp, y_pos, 2)
+    ax.set_title(f'Specific Impulse: {title}')
+
+
 def topContender(thrusterData, title):
     fig, ax = plt.subplots()
     y_pos = np.arange(len(thrusterData))
     names = []
     costs = []
-    costRanking = thrusterData.sort_values(by = 'Cost')
+    costRanking = thrusterData.sort_values(by='Cost')
     masses = []
     thrusts = []
     fuelrates = []
     for index, dat in thrusterData.iterrows():
-
         names.append(index)
         costs.append(dat['Cost'])
 
